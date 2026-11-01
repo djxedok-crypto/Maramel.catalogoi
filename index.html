@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17110e">
+  <meta name="description" content="Каталог новогодних персонажей и праздничных образов Марамель.">
+  <title>Марамель — каталог персонажей</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+/* =========================================================
+   MARAMEL — responsive catalog styles
+   Edit colors in each .theme-* class. All catalog blocks are
+   authored individually in index.html (no JS-generated sections).
+   ========================================================= */
+:root{color-scheme:dark;--ink:#fff9f0;--muted:rgba(255,249,240,.86);--gold:#e8bf80;--page:#17110e;--serif:"Playfair Display",Georgia,serif;--sans:"Manrope",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{max-width:100%}
+.site-header{position:absolute;z-index:20;inset:0 0 auto;min-height:96px;padding:22px 5.5%;display:flex;align-items:center;justify-content:space-between;gap:28px;background:linear-gradient(180deg,rgba(16,11,8,.42),transparent)}.brand{display:flex;align-items:center;gap:13px;flex-shrink:0}.brand img{width:46px;height:46px;object-fit:contain}.brand-copy{display:grid;gap:5px}.brand-copy strong{font-size:18px;letter-spacing:.2em}.brand-copy small{font-size:9px;letter-spacing:.19em;color:var(--gold)}.header-message{margin:0;color:rgba(255,249,240,.82);font-size:13px}.header-cta,.intro-button{display:inline-flex;align-items:center;justify-content:center;gap:20px;border:1px solid rgba(237,199,140,.8);border-radius:999px;padding:13px 20px;font-size:12px;font-weight:800;transition:background .2s,color .2s,transform .2s}.header-cta:hover,.intro-button:hover{background:var(--gold);color:#21150e;transform:translateY(-2px)}
+.intro{position:relative;isolation:isolate;min-height:680px;display:flex;align-items:center;overflow:hidden;padding:150px 8% 100px;background:radial-gradient(ellipse at 78% 45%,rgba(196,125,52,.23),transparent 40%),linear-gradient(120deg,#1c120d,#3c2517 65%,#17110e)}.intro:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(19,12,8,.3),transparent 75%)}.intro-glow{position:absolute;z-index:-1;width:520px;height:520px;right:9%;top:8%;border:1px solid rgba(232,191,128,.16);border-radius:50%;box-shadow:0 0 0 40px rgba(232,191,128,.025),0 0 0 90px rgba(232,191,128,.02)}.intro-content{max-width:800px}.eyebrow{margin:0 0 24px;color:var(--accent,var(--gold));font-size:11px;font-weight:800;letter-spacing:.27em}.intro h1,.section-copy h2,.catalog-heading h2{font-family:var(--serif);font-weight:500;letter-spacing:-.045em}.intro h1{font-size:clamp(54px,7.3vw,104px);line-height:1.03;margin:0 0 24px}.intro h1 em{font-weight:500;color:#e9c58f}.intro-description{max-width:590px;font-size:clamp(16px,1.5vw,21px);line-height:1.8;color:var(--muted);margin:0 0 32px}.intro-button{padding:17px 25px;font-size:14px}.intro-stamp{position:absolute;right:9%;bottom:13%;font-size:11px;line-height:1.8;letter-spacing:.28em;color:rgba(240,207,158,.75);text-align:center;border:1px solid rgba(240,207,158,.35);border-radius:50%;width:130px;height:130px;display:grid;place-content:center;transform:rotate(10deg)}
+.catalog-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;padding:78px 7% 54px;background:#17110e}.catalog-heading .eyebrow{margin-bottom:15px}.catalog-heading h2{font-size:clamp(36px,4vw,56px);margin:0}.catalog-heading>p{margin:0;color:rgba(255,249,240,.65);font-size:13px;line-height:1.9}
+.catalog-section{--accent:#e8bf80;position:relative;isolation:isolate;min-height:760px;display:flex;align-items:center;overflow:hidden;padding:105px 7% 78px;background:#2b1b12;color:var(--ink)}.section-backdrop{position:absolute;z-index:-2;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;transform:scale(1.005)}/* Use a restrained left-side gradient instead of a black overlay across the whole image. */.catalog-section:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(24,15,10,.76) 0%,rgba(24,15,10,.58) 29%,rgba(24,15,10,.28) 49%,rgba(24,15,10,.06) 76%,rgba(24,15,10,.02) 100%)}.catalog-section:after{content:"";position:absolute;z-index:-1;inset:auto 0 0;height:70px;background:linear-gradient(0deg,rgba(12,8,6,.2),transparent);pointer-events:none}.section-content{width:100%;max-width:1500px;margin:auto;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.82fr);align-items:center;gap:clamp(35px,6vw,100px);position:relative}.section-copy{max-width:740px;text-shadow:0 2px 16px rgba(0,0,0,.16)}.section-copy .eyebrow{margin-bottom:22px}.section-copy h2{font-size:clamp(50px,6.2vw,88px);line-height:1.07;margin:0 0 26px}.description{max-width:650px;font-size:clamp(16px,1.35vw,20px);line-height:1.85;color:var(--muted);margin:0 0 26px}.features{list-style:none;display:grid;gap:12px;margin:0 0 38px;padding:0}.features li{font-size:clamp(14px,1.05vw,16px);line-height:1.65;color:rgba(255,249,240,.94)}.features li:before{content:"✦";color:var(--accent);margin-right:11px}.section-bottom{display:flex;align-items:center;gap:25px;flex-wrap:wrap}.price{display:grid;gap:10px}.price span{font-size:10px;font-weight:800;letter-spacing:.25em;color:var(--accent)}.price strong{font-family:var(--serif);font-size:clamp(23px,2vw,31px);font-weight:600}.details-link{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:58px;padding:0 25px;border:1.5px solid var(--accent);border-radius:999px;background:rgba(20,14,10,.12);font-weight:800;white-space:nowrap;transition:background .2s,color .2s,transform .2s}.details-link:hover{background:var(--accent);color:#20150f;transform:translateY(-2px)}.details-link span{font-size:21px}
+.character-card{position:relative;margin:0;min-height:520px;height:min(66vh,690px);overflow:hidden;border:1px solid color-mix(in srgb,var(--accent) 75%,transparent);background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(0,0,0,.15));box-shadow:0 22px 65px rgba(0,0,0,.14)}.character-card img{display:block;width:100%;height:100%;min-height:520px;object-fit:cover;object-position:center}.character-card.image-missing:before{content:"Добавьте фото персонажей";position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;color:rgba(255,255,255,.72);font-size:13px;letter-spacing:.1em;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(0,0,0,.18))}.card-label{position:absolute;left:17px;right:17px;bottom:17px;padding:15px 16px;background:rgba(14,18,22,.72);backdrop-filter:blur(8px);font-size:10px;letter-spacing:.2em;font-weight:800}.section-number{position:absolute;right:0;bottom:-42px;color:rgba(255,249,240,.68);font-size:10px;letter-spacing:.22em}
+/* Color tokens are intentionally separate so each collection is easy to customize. */.theme-santa{--accent:#f0bd78}.theme-ice{--accent:#a8efff}.theme-mary{--accent:#f5c5ce}.theme-gold{--accent:#f0c77e}.theme-white{--accent:#fff0d5}.theme-burgundy{--accent:#e7a0ad}.theme-red{--accent:#ff9b94}.theme-puppeteer{--accent:#c7b3f2}.theme-statues{--accent:#f5d48b}
+.theme-santa:before{background:linear-gradient(90deg,rgba(47,17,12,.73),rgba(47,17,12,.53) 29%,rgba(47,17,12,.24) 49%,rgba(47,17,12,.04) 100%)}.theme-ice:before{background:linear-gradient(90deg,rgba(10,31,42,.72),rgba(10,31,42,.5) 29%,rgba(10,31,42,.22) 49%,rgba(10,31,42,.03) 100%)}.theme-mary:before{background:linear-gradient(90deg,rgba(48,18,25,.7),rgba(48,18,25,.48) 29%,rgba(48,18,25,.2) 49%,rgba(48,18,25,.03) 100%)}.theme-gold:before{background:linear-gradient(90deg,rgba(43,25,9,.72),rgba(43,25,9,.5) 29%,rgba(43,25,9,.22) 49%,rgba(43,25,9,.03) 100%)}.theme-white:before{background:linear-gradient(90deg,rgba(37,29,24,.67),rgba(37,29,24,.47) 29%,rgba(37,29,24,.2) 49%,rgba(37,29,24,.03) 100%)}.theme-burgundy:before{background:linear-gradient(90deg,rgba(48,12,27,.73),rgba(48,12,27,.5) 29%,rgba(48,12,27,.22) 49%,rgba(48,12,27,.03) 100%)}.theme-red:before{background:linear-gradient(90deg,rgba(53,12,13,.72),rgba(53,12,13,.5) 29%,rgba(53,12,13,.22) 49%,rgba(53,12,13,.03) 100%)}.theme-puppeteer:before{background:linear-gradient(90deg,rgba(24,17,38,.74),rgba(24,17,38,.52) 29%,rgba(24,17,38,.24) 49%,rgba(24,17,38,.03) 100%)}.theme-statues:before{background:linear-gradient(90deg,rgba(39,28,10,.7),rgba(39,28,10,.48) 29%,rgba(39,28,10,.2) 49%,rgba(39,28,10,.03) 100%)}
+.site-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 7%;background:#17110e;color:rgba(255,249,240,.65);font-size:11px}.footer-brand{font-weight:800;letter-spacing:.2em;color:var(--gold)}.site-footer>a:last-child{color:var(--gold)}
+@media(max-width:1000px){.header-message{display:none}.catalog-section{min-height:690px;padding-left:5%;padding-right:5%}.section-content{grid-template-columns:minmax(0,1fr) minmax(270px,.8fr);gap:30px}.character-card,.character-card img{min-height:440px}.character-card{height:56vh}.section-copy h2{font-size:clamp(44px,6vw,68px)}.section-bottom{gap:16px}.details-link{padding:0 19px}}
+@media(max-width:700px){.site-header{min-height:76px;padding:14px 5%;gap:10px}.brand img{width:35px;height:35px}.brand-copy strong{font-size:14px}.brand-copy small{font-size:7px;letter-spacing:.12em}.header-cta{font-size:10px;padding:10px 12px;gap:8px}.intro{min-height:650px;padding:130px 7% 90px}.intro h1{font-size:clamp(47px,11.5vw,70px)}.intro-stamp{width:88px;height:88px;right:7%;bottom:7%;font-size:8px}.catalog-heading{align-items:flex-start;flex-direction:column;padding:52px 7% 38px;gap:16px}.catalog-heading h2{font-size:39px}.catalog-section{min-height:auto;padding:105px 6% 48px}.section-content{grid-template-columns:1fr;gap:28px}.section-copy{order:1}.character-card{order:2;height:auto;min-height:0;aspect-ratio:4/5}.character-card img{height:100%;min-height:0;aspect-ratio:4/5}.section-copy h2{font-size:clamp(44px,11vw,66px);margin-bottom:20px}.section-copy .eyebrow{font-size:10px;margin-bottom:17px}.description{font-size:15px;line-height:1.8}.features{gap:10px;margin-bottom:28px}.features li{font-size:13px}.section-bottom{align-items:flex-start;flex-direction:column}.details-link{min-height:52px}.section-number{position:static;grid-row:3;text-align:right}.catalog-section:before,.theme-santa:before,.theme-ice:before,.theme-mary:before,.theme-gold:before,.theme-white:before,.theme-burgundy:before,.theme-red:before,.theme-puppeteer:before,.theme-statues:before{background:linear-gradient(180deg,rgba(22,15,12,.76) 0%,rgba(22,15,12,.55) 43%,rgba(22,15,12,.22) 100%)}.site-footer{align-items:flex-start;flex-direction:column;padding:25px 6%}}
+@media(max-width:380px){.header-cta{max-width:120px;text-align:center}.brand-copy small{max-width:145px}.intro h1{font-size:43px}.section-copy h2{font-size:42px}.price strong{font-size:24px}}
+
+/* ===== ДОБАВЛЕНО: ОФОРМЛЕНИЕ БЛОКА КОЗЛОВ ===== */
+/* ===== 10. КОЗЛЫ — СИМВОЛЫ ГОДА ===== */
+.theme-goats {
+  --section-accent: #e8bd80;
+  --section-text: #fff4e4;
+}
+.theme-goats .section-backdrop {
+  background-position: center;
+  background-size: cover;
+}
+.theme-goats .section-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 9, 18, .94) 0%, rgba(5, 9, 18, .68) 45%, rgba(5, 9, 18, .18) 100%),
+    radial-gradient(ellipse at 70% 40%, rgba(232, 189, 128, .12), transparent 60%);
+  pointer-events: none;
+}
+.theme-goats .eyebrow,
+.theme-goats .card-label,
+.theme-goats .price span {
+  color: #e8bd80;
+}
+.theme-goats .details-link {
+  border-color: #e8bd80;
+}
+.theme-goats .details-link:hover {
+  background: #e8bd80;
+  color: #17110e;
+}
+.theme-goats .character-card {
+  border-color: rgba(232, 189, 128, .4);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, .35);
+}
+
+/* Pricing and additional services */
+.price-note{display:block;margin-top:7px;color:#f2d8b0;font-size:13px;line-height:1.5;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.3)}
+.extra-services{padding:100px 7%;background:radial-gradient(ellipse at 15% 0%,rgba(190,145,88,.16),transparent 42%),#17110e;color:#f8eee0}
+.extra-heading{max-width:760px;margin:0 auto 48px;text-align:center}
+.extra-heading h2{font-family:var(--serif);font-size:clamp(38px,5vw,64px);margin:10px 0 15px}
+.extra-heading>p:last-child{color:rgba(248,238,224,.72);line-height:1.8}
+.service-grid{max-width:1320px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.service-card{position:relative;min-height:190px;padding:28px;border:1px solid rgba(226,190,139,.28);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018));box-shadow:0 15px 45px rgba(0,0,0,.13)}
+.service-kicker{font-size:10px;letter-spacing:.22em;color:#d9b783;font-weight:800}
+.service-card h3{font-family:var(--serif);font-size:25px;line-height:1.2;margin:20px 0 12px}
+.service-card strong{font-size:23px;color:#e8c895}
+.service-card p{margin:8px 0 0;color:rgba(248,238,224,.68);font-size:13px}
+.booking-notes{padding:55px 7% 65px;background:#211710;color:#f8eee0;border-top:1px solid rgba(226,190,139,.2)}
+.booking-notes>div{display:flex;align-items:center;gap:14px;max-width:900px;margin:0 auto 22px}
+.booking-notes h2{font-family:var(--serif);font-size:34px;margin:0}
+.note-icon{color:#e8c895;font-size:26px}
+.booking-notes>p{max-width:900px;margin:12px auto;color:rgba(248,238,224,.83);line-height:1.7}
+.booking-notes>p strong{color:#e8c895}
+.booking-notes .fine-print{font-size:12px;color:rgba(248,238,224,.5);margin-top:22px}
+@media(max-width:900px){.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.extra-services{padding:70px 6%}.service-grid{grid-template-columns:1fr;gap:12px}.service-card{min-height:150px;padding:23px}.booking-notes{padding:42px 6%}.booking-notes h2{font-size:29px}}
+
+
+/* Premium full-width service sections — match the character-pair catalog */
+.extra-service{min-height:650px;padding-top:85px;padding-bottom:75px}
+.extra-service .section-content{grid-template-columns:minmax(0,1.08fr) minmax(300px,.82fr)}
+.extra-service .section-copy h2{font-size:clamp(46px,5.6vw,78px)}
+.extra-service .price strong{font-size:clamp(28px,2.5vw,38px)}
+.extra-service .section-number{bottom:-24px}
+.service-art{position:relative;min-height:470px;height:min(58vh,590px);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;border:1px solid rgba(255,255,255,.24);box-shadow:0 25px 75px rgba(0,0,0,.3);background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.2),transparent 42%),linear-gradient(145deg,rgba(255,255,255,.11),rgba(0,0,0,.3));text-align:center}
+.service-art:before,.service-art:after{content:"";position:absolute;border:1px solid currentColor;border-radius:50%;width:72%;aspect-ratio:1;opacity:.24}
+.service-art:after{width:88%;opacity:.12}
+.service-art span{font-size:clamp(11px,1vw,14px);font-weight:800;letter-spacing:.45em;opacity:.82}
+.service-art b{font-family:var(--serif);font-size:clamp(110px,15vw,190px);font-weight:400;line-height:1.1;text-shadow:0 12px 45px rgba(0,0,0,.25)}
+.service-art small{font-size:10px;line-height:1.8;letter-spacing:.35em;font-weight:800}
+.art-gold{color:#f5d69a;background:radial-gradient(ellipse at 50% 45%,rgba(219,167,82,.38),transparent 55%),linear-gradient(145deg,#4a3219,#17110e)}
+.art-royal{color:#f3d3a3;background:radial-gradient(ellipse at 50% 45%,rgba(196,147,94,.36),transparent 55%),linear-gradient(145deg,#46251d,#17110e)}
+.art-puppet{color:#d5c5ff;background:radial-gradient(ellipse at 50% 45%,rgba(137,111,193,.38),transparent 55%),linear-gradient(145deg,#29213e,#11101a)}
+.art-host{color:#edb2bd;background:radial-gradient(ellipse at 50% 45%,rgba(165,67,93,.4),transparent 55%),linear-gradient(145deg,#421b2a,#180e14)}
+.art-vocal{color:#ffb1a4;background:radial-gradient(ellipse at 50% 45%,rgba(186,65,59,.4),transparent 55%),linear-gradient(145deg,#471b1b,#190e0e)}
+.art-dance{color:#b6edff;background:radial-gradient(ellipse at 50% 45%,rgba(65,150,185,.4),transparent 55%),linear-gradient(145deg,#193746,#0c1820)}
+.art-light{color:#f5d48b;background:radial-gradient(ellipse at 50% 45%,rgba(211,170,82,.4),transparent 55%),linear-gradient(145deg,#453516,#17110e)}
+.booking-notes{background:radial-gradient(ellipse at 80% 0%,rgba(190,145,88,.13),transparent 45%),#211710}
+@media(max-width:700px){.extra-service{min-height:0;padding-top:85px;padding-bottom:48px}.extra-service .section-content{grid-template-columns:1fr}.extra-service .section-copy{order:1}.extra-service .service-art{order:2;min-height:310px;height:360px}.extra-service .section-number{order:3;grid-row:auto}.extra-service .section-copy h2{font-size:clamp(42px,10vw,62px)}}
+
+  
+.extra-service .service-photo{min-height:470px;height:min(58vh,590px);border:1px solid rgba(226,190,139,.65);box-shadow:0 28px 80px rgba(0,0,0,.42)}
+.extra-service .service-photo img{object-fit:cover;object-position:center;height:100%;min-height:470px;filter:saturate(.96) contrast(1.04)}
+.extra-service .section-copy h2{color:#fff5e7;text-shadow:0 4px 24px rgba(0,0,0,.35)}
+.extra-service .price{padding:18px 24px;border-left:2px solid var(--accent);background:linear-gradient(90deg,rgba(0,0,0,.28),transparent)}
+.extra-service .price strong{color:#f4d39c}
+.extra-service .section-backdrop{background-size:cover;background-position:center;filter:brightness(.45) saturate(.75)}
+@media(max-width:700px){.extra-service .service-photo{height:auto;min-height:0;aspect-ratio:4/5}.extra-service .service-photo img{min-height:0}}
+</style>
+<style>[hidden]{display:none!important}</style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Марамель — главная">
+      <img src="images/logo.png" alt="Логотип Марамель" onerror="this.hidden=true">
+      <span class="brand-copy"><strong>МАРАМЕЛЬ</strong><small>НОВОГОДНИЕ ПЕРСОНАЖИ</small></span>
+    </a>
+    <p class="header-message">Создаём атмосферу, которую запоминают.</p>
+    <a class="header-cta" href="#services">Услуги и цены <span aria-hidden="true">↘</span></a>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-glow" aria-hidden="true"></div>
+      <div class="intro-content">
+        <p class="eyebrow">НОВОГОДНИЙ СЕЗОН</p>
+        <h1 id="intro-title">Праздник начинается<br><em>с появления</em></h1>
+        <p class="intro-description">Персонажи, которые превращают обычное мероприятие в красивое воспоминание.</p>
+        <a class="intro-button" href="#services">Услуги и цены <span aria-hidden="true">↘</span></a>
+      </div>
+      <span class="intro-stamp" aria-hidden="true">MAGIC<br>IN EVERY<br>DETAIL</span>
+    </section>
+
+    <section class="catalog-heading" id="catalog">
+      <div><p class="eyebrow">КОЛЛЕКЦИЯ МАРАМЕЛЬ</p><h2>Выбери свою атмосферу</h2></div>
+      <p>Каждый образ — отдельная история.<br>Найди ту, что подходит твоему празднику.</p>
+    </section>
+
+    <!-- ==================== 01. САНТА КЛАУСЫ ====================
+         Фон: images/santa-background.jpg | Фото персонажей: images/santa-pair.jpg
+         Управление публикацией: data-visible="true" — показывать, data-visible="false" — скрыть.
+         Для добавления — скопируйте section и поменяйте id, класс, тексты и пути к изображениям.
+    -->
+    <section class="catalog-section theme-santa" id="santa" data-visible="true">
+      <div class="section-backdrop" style="background-image: url('images/santa-background.jpg')" aria-hidden="true"></div>
+      <div class="section-content">
+        <div class="section-copy">
+          <p class="eyebrow">SANTA COLLECTION</p>
+          <h2>Санта Клаусы</h2>
+          <p class="description">Красно-золотая классика, праздничные костюмы и настоящее новогоднее настроение.</p>
+          <ul class="features">
+            <li>Яркое появление и поздравления</li><li>Для корпоративов и семейных праздников</li><li>Фотографии и интерактив</li>
+          </ul>
+          <div class="section-bottom">
+            <div class="price"><span>СТОИМОСТЬ</span><strong>50 000 ₸</strong><small class="price-note">При заказе за 7–10 дней — 45 000 ₸</small></div>
+          </div>
+        </div>
+        <figure class="character-card">
+          <img src="images/santa-pair.png" alt="Образ: Санта Клаусы" loading="lazy" onerror="this.hidden=true; this.parentElement.classList.add('image-missing')">
+          <figcaption class="card-label">SANTA COLLECTION</figcaption>
+        </figure>
+        <span class="section-number">01 / 10</span>
+      </div>
+    </section>
+
+    <!-- ==================== 02. ЛЕДЯНАЯ ПАРА ====================
+         Фон: images/ice-background.jpg | Фото персонажей: images/ice-pair.jpg
+         Управление публикацией: data-visible="true" — показывать, data-visible="false" — скрыть.
+         Для добавления — скопируйте section и поменяйте id, класс, тексты и пути к изображениям.
+    -->
+    <section class="catalog-section theme-ice" id="ice" data-visible="true">
+      <div class="section-backdrop" style="background-image: url('images/ice-background.jpg')" aria-hidden="true"></div>
+      <div class="section-content">
+        <div class="section-copy">
+          <p class="eyebrow">ICE BLUE COLLECTION</p>
+          <h2>Ледяная пара</h2>
+          <p class="description">Ледяные оттенки, сияющие детали и атмосфера зимней сказки.</p>
+          <ul class="features">
+            <li>Голубые и серебристые образы</li><li>Для фотосессий и зимних мероприятий</li><li>Эффектное появление и общение с гостями</li>
+          </ul>
+          <div class="section-bottom">
+            <div class="price"><span>СТОИМОСТЬ</span><strong>55 000 ₸</strong><small class="price-note">При заказе за 7–10 дней — 50 000 ₸</small></div>
+          </div>
+        </div>
+        <figure class="character-card">
+          <img src="images/ice-pair.png" alt="Образ: Ледяная пара" loading="lazy" onerror="this.hidden=true; this.parentElement.classList.add('image-missing')">
+          <figcaption class="card-label">ICE BLUE COLLECTION</figcaption>
+        </figure>
+        <span class="section-number">02 / 10</span>
+      </div>
+    </section>
+
+    <!-- ==================== 03. МЭРИ КРИСМАС ====================
+         Фон: images/mary-background.jpg | Фото персонажей: images/mary-pair.jpg
+         Управление публикацией: data-visible="true" — показывать, data-visible="false" — скрыть.
+         Для добавления — скопируйте section и поменяйте id, класс, тексты и пути к изображениям.
+    -->
+    <section class="catalog-section theme-mary" id="mary" data-visible="true">
+      <div class="section-backdrop" style="background-image: url('images/mary-background.jpg')" aria-hidden="true"></div>
+      <div class="section-content">
+        <div class="section-copy">
+          <p class="eyebrow">MERRY CHRISTMAS COLLECTION</p>
+          <h2>Эльфы</h2>
+          <p class="description">Праздничная эстетика с яркими деталями и настроением рождественской сказки.</p>
+          <ul class="features">
+            <li>Выразительные тематические образы</li><li>Для вечеринок и праздничных площадок</li><li>Поздравления, фото и интерактив</li>
+          </ul>
+          <div class="section-bottom">
+            <div class="price"><span>СТОИМОСТЬ</span><strong>15 000 ₸ / человек / час</strong></div>
+          </div>
+        </div>
+        <figure class="character-card">
+          <img src="images/mary-pair.png" alt="Образ: Мэри Крисмас" loading="lazy" onerror="this.hidden=true; this.parentElement.classList.add('image-missing')">
+          <figcaption class="card-label">MERRY CHRISTMAS COLLECTION</figcaption>
+        </figure>
+        <span class="section-number">03 / 10</span>
+      </div>
+    </section>
+
+    <!-- ==================== 04. ЗОЛОТАЯ ====================
+         Фон: images/gold-background.jpg | Фото персонажей: images/gold-pair.jpg
+         Управление публикацией: data-visible="true" — показывать, data-visible="false" — скрыть.
+         Для добавления — скопируйте section и поменяйте id, класс, тексты и пути к изображениям.
+    -->
+    <section class="catalog-section theme-gold" id="gold" data-visible="true">
+      <div class="section-backdrop" style="background-image: url('images/gold-background.jpg')" aria-hidden="true"></div>
+      <div class="section-content">
+        <div class="section-copy">
+          <p class="eyebrow">GOLD COLLECTION</p>
+          <h2>Золотая пара</h2>
+          <p class="description">Роскошные золотые детали, сияющие костюмы и эффектное появление на мероприятии.</p>
+          <ul class="features">
+            <li>Золотые костюмы и акценты</li><li>Для премиальных событий и корпоративов</li><li>Фотографии и праздничная программа</li>
+          </ul>
+          <div class="section-bottom">
+            <div class="price"><span>СТОИМОСТЬ</span><strong>60 000 ₸</strong><small class="price-note">При заказе за 7–10 дней — 50 000 ₸</small></div>
+          </div>
+        </div>
+        <figure class="character-card">
+          <img src="images/gold-pair.png" alt="Образ: Золотая" loading="lazy" onerror="this.hidden=true; this.parentElement.classList.add('image-missing')">
+          <figcaption class="card-label">GOLD COLLECTION</figcaption>
+        </figure>
+        <span class="section-number">04 / 10</span>
+      </div>
+    </section>
+
+    <!-- ==================== 05. БЕЛАЯ ====================
+         Фон: images/white-background.jpg | Фото персонажей: images/white-pair.jpg
+         Управление публикацией: data-visible="true" — показывать, data-visible="false" — скрыть.
+         Для добавления — скопируйте section и поменяйте id, класс, тексты и пути к изображениям.
+    -->
+    <section class="catalog-section theme-white" id="white" data-visible="true">
+      <div class="section-backdrop" style="background-image: url('images/white-background.jpg')" aria-hidden="true"></div>
+      <div class="section-content">
+        <div class="section-copy">
+          <p class="eyebrow">PURE WHITE COLLECTION</p>
+          <h2>Белая пара</h2>
+          <p class="description">Чистая эстетика, светлые образы и изысканная зимняя атмосфера.</p>
+          <ul class="features">
+            <li>Белоснежные костюмы</li><li>Для торжеств и фотосессий</li><li>Элегантное появление и поздравления</li>
+          </ul>
+          <div class="section-bottom">
+            <div class="price"><span>СТОИМОСТЬ</span><strong>60 000 ₸</strong><small class="price-note">При заказе за 7–10 дней — 55 000 ₸</small></div>
+          </div>
+        </div>
+        <figure class="character-card">
+          <img src="images/white-pair.png" alt="Образ: Белая" loading="lazy" onerror="this.hidden=true; this.parentElement.classList.add('image-missing')">
+          <figcaption class="card-label">PURE WHITE COLLECTION</figcaption>
+        </figure>
+        <span class="section-number">05 / 10</span>
+      </div>
+    </section>
+
+    <!-- ==================== 06. БУРГУНДИ ====================
+         Фон: images/burgundy-background.jpg | Фото персонажей: images/burgundy-pair.jpg
+         Управление публикацией: data-visible="true" — показывать, data-visible="false" — скрыть.
+         Для добавления — скопируйте section и поменяйте id, класс, тексты и пути к изображениям.
+    -->
+    <section class="catalog-section theme-burgundy" id="burgundy" data-visible="true">
+      <div class="section-backdrop" style="background-image: url('images/burgundy-background.jpg')" aria-hidden="true"></div>
+      <div class="section-content">
+        <div class="section-copy">
+          <p class="eyebrow">BURGUNDY COLLECTION</p>
+          <h2>Бургунди пара</h2>
+          <p class="description">Глубокие винные оттенки, выразительный стиль и благородная праздничная эстетика.</p>
+          <ul class="features">
+            <li>Костюмы в оттенках бургунди</li><li>Для вечерних мероприятий и корпоративов</li><li>Стильные фотографии и интерактив</li>
+          </ul>
+          <div class="section-bottom">
+            <div class="price"><span>СТОИМОСТЬ</span><strong>50 000 ₸</strong><small class="price-note">При заказе за 7–10 дней — 45 000 ₸</small></div>
+          </div>
+        </div>
+        <figure class="character-card">
+          <img src="images/burgundy-pair.png" alt="Образ: Бургунди" loading="lazy" onerror="this.hidden=true; this.parentElement.classList.add('image-missing')">
+          <figcaption class="card-label">BURGUNDY COLLECTION</figcaption>
+        </figure>
+        <span class="section-number">06 / 10</span>
+      </div>
+    </section>
+
+    <!-- ==================== 07. КРАСНАЯ ПАРА ====================
+         Фон: images/red-background.jpg | Фото персонажей: images/red-pair.jpg
+         Управление публикацией: data-visible="true" — показывать, data-visible="false" — скрыть.
+         Для добавления — скопируйте section и поменяйте id, класс, тексты и пути к изображениям.
+    -->
+    <section class="catalog-section theme-red" id="red" data-visible="true">
+      <div class="section-backdrop" style="background-image: url('images/red-background.jpg')" aria-hidden="true"></div>
+      <div class="section-content">
+        <div class="section-copy">
+          <p class="eyebrow">RUBY RED COLLECTION</p>
+          <h2>Зимняя вишня</h2>
+          <p class="description">Насыщенный красный цвет, смелые образы и энергия, которую невозможно не заметить. Снегурочка находится в разработке.</p>
+          <ul class="features">
+            <li>Яркие красные костюмы</li><li>Для вечеринок и открытий</li><li>Поздравления, фотографии и интерактив</li>
+          </ul>
+          <div class="section-bottom">
+            <div class="price"><span>СТОИМОСТЬ</span><strong>65 000 ₸</strong><small class="price-note">При заказе за 7–10 дней — 60 000 ₸</small></div>
+          </div>
+        </div>
+        <figure class="character-card">
+          <img src="images/red-pair.png" alt="Образ: Красная пара" loading="lazy" onerror="this.hidden=true; this.parentElement.classList.add('image-missing')">
+          <figcaption class="card-label">RUBY RED COLLECTION</figcaption>
+        </figure>
+        <span class="section-number">07 / 10</span>
+      </div>
+    </section>
+
+    <!-- ==================== 08. КУКЛОВОД ====================
+         Фон: images/puppeteer-background.jpg | Фото персонажей: images/puppeteer-pair.jpg
+         Управление публикацией: data-visible="true" — показывать, data-visible="false" — скрыть.
+         Для добавления — скопируйте section и поменяйте id, класс, тексты и пути к изображениям.
+    -->
+    <section class="catalog-section theme-puppeteer" id="puppeteer" data-visible="true">
+      <div class="section-backdrop" style="background-image: url('images/puppeteer-background.jpg')" aria-hidden="true"></div>
+      <div class="section-content">
+        <div class="section-copy">
+          <p class="eyebrow">THE PUPPETEER COLLECTION</p>
+          <h2>Кукловод</h2>
+          <p class="description">Необычный персонаж с загадочной атмосферой и запоминающейся подачей.</p>
+          <ul class="features">
+            <li>Авторский сценический образ</li><li>Для тематических событий и шоу</li><li>Необычное появление и взаимодействие с гостями</li>
+          </ul>
+          <div class="section-bottom">
+            <div class="price"><span>СТОИМОСТЬ</span><strong>80 000 ₸</strong></div>
+          </div>
+        </div>
+        <figure class="character-card">
+          <img src="images/puppeteer-pair.png" alt="Образ: Кукловод" loading="lazy" onerror="this.hidden=true; this.parentElement.classList.add('image-missing')">
+          <figcaption class="card-label">THE PUPPETEER COLLECTION</figcaption>
+        </figure>
+        <span class="section-number">08 / 10</span>
+      </div>
+    </section>
+
+    <!-- ==================== 09. ЗОЛОТЫЕ СТАТУИ ====================
+         Фон: images/statues-background.jpg | Фото персонажей: images/statues-pair.jpg
+         Управление публикацией: data-visible="true" — показывать, data-visible="false" — скрыть.
+         Для добавления — скопируйте section и поменяйте id, класс, тексты и пути к изображениям.
+    -->
+    <section class="catalog-section theme-statues" id="statues" data-visible="true">
+      <div class="section-backdrop" style="background-image: url('images/statues-background.jpg')" aria-hidden="true"></div>
+      <div class="section-content">
+        <div class="section-copy">
+          <p class="eyebrow">GOLDEN STATUES COLLECTION</p>
+          <h2>Золотые статуи</h2>
+          <p class="description">Эффектные золотые статуи — визуальный акцент, который превращает входную зону в шоу.</p>
+          <ul class="features">
+            <li>Золотые статичные образы</li><li>Для welcome-зон и фотозон</li><li>Эффектное присутствие и фото с гостями</li>
+          </ul>
+          <div class="section-bottom">
+            <div class="price"><span>СТОИМОСТЬ</span><strong>70 000 ₸</strong></div>
+          </div>
+        </div>
+        <figure class="character-card">
+          <img src="images/statues-pair.png" alt="Образ: Золотые статуи" loading="lazy" onerror="this.hidden=true; this.parentElement.classList.add('image-missing')">
+          <figcaption class="card-label">GOLDEN STATUES COLLECTION</figcaption>
+        </figure>
+        <span class="section-number">09 / 10</span>
+      </div>
+    </section>
+
+
+    <!-- ==================== 10. КОЗЛЫ — СИМВОЛЫ ГОДА ====================
+         Фон: images/goats-background.jpg | Персонажи: images/goats-2026.png
+    -->
+    <section class="catalog-section theme-goats" id="goats" data-visible="true">
+      <div class="section-backdrop" style="background-image: url('images/goats-background.jpg')" aria-hidden="true"></div>
+      <div class="section-content">
+        <div class="section-copy">
+          <p class="eyebrow">SYMBOLS OF THE YEAR</p>
+          <h2>Символы года</h2>
+          <p class="description">Авторские персонажи — символы наступающего года. Представленный образ является эскизом приблежонным к реальности.</p>
+          <ul class="features">
+            <li>Стоимость указана за одну куклу</li><li>Пара персонажей — 50 000 ₸ / час</li><li>При заказе от 2 часов — скидка 5 000 ₸</li>
+          </ul>
+          <div class="section-bottom">
+            <div class="price"><span>СТОИМОСТЬ</span><strong>25 000 ₸ / кукла / час</strong></div>
+          </div>
+        </div>
+        <figure class="character-card">
+          <img src="images/goats-2026.png" alt="Новогодние козлы — символы года" loading="lazy" onerror="this.hidden=true; this.parentElement.classList.add('image-missing')">
+          <figcaption class="card-label">SYMBOLS OF THE YEAR</figcaption>
+        </figure>
+        <span class="section-number">10 / 10</span>
+      </div>
+    </section>
+
+
+    <section class="catalog-heading" id="services">
+      <div><p class="eyebrow">THE ART OF CELEBRATION</p><h2>Дополнительные услуги</h2></div>
+      <p>Яркие детали, которые превращают праздник<br>в настоящее событие</p>
+    </section>
+
+
+
+    <section class="catalog-section extra-service theme-burgundy">
+      <div class="section-backdrop" style="background-image:url('images/background-host.jpg')" aria-hidden="true"></div><div class="section-content">
+        <div class="section-copy"><p class="eyebrow">YOUR EVENT · 04</p><h2>Ведущий</h2><p class="description">Профессиональное ведение мероприятия, работа с гостями и создание правильного настроения на протяжении праздника. Рахим Кенжаев 
+Данил Юрьев.</p><ul class="features"><li>Работа с программой мероприятия</li><li>Интерактив и общение с гостями</li><li>Подбор формата под ваше событие</li></ul><div class="section-bottom"><div class="price"><span>СТОИМОСТЬ</span><strong>от 150 000 ₸</strong></div></div></div>
+        <figure class="character-card service-photo"><img src="images/service-host.png" alt="Ведущий" loading="lazy"><figcaption class="card-label">HOST / LIVE EVENT</figcaption></figure><span class="section-number">01 / 04</span>
+      </div>
+    </section>
+
+    <section class="catalog-section extra-service theme-red">
+      <div class="section-backdrop" style="background-image:url('images/background-vocal.jpg')" aria-hidden="true"></div><div class="section-content">
+        <div class="section-copy"><p class="eyebrow">LIVE PERFORMANCE · 05</p><h2>Вокалист</h2><p class="description">Живое музыкальное сопровождение и любимые композиции на казахском и русском языках.</p><ul class="features"><li>Репертуар на казахском и русском</li><li>Живое исполнение</li><li>Музыкальное настроение вашего вечера</li></ul><div class="section-bottom"><div class="price"><span>СТОИМОСТЬ</span><strong>от 80 000 ₸</strong></div></div></div>
+        <figure class="character-card service-photo"><img src="images/service-vocal.png" alt="Вокалист" loading="lazy"><figcaption class="card-label">LIVE VOCAL</figcaption></figure><span class="section-number">02 / 04</span>
+      </div>
+    </section>
+
+    <section class="catalog-section extra-service theme-ice">
+      <div class="section-backdrop" style="background-image:url('images/background-dance.jpg')" aria-hidden="true"></div><div class="section-content">
+        <div class="section-copy"><p class="eyebrow">DANCE PERFORMANCE · 06</p><h2>Танцевальный коллектив</h2><p class="description">Динамичное шоу с хореографией, которое добавит энергии и зрелищности вашему мероприятию.</p><ul class="features"><li>Постановочные танцевальные номера</li><li>Сценическое выступление</li><li>Эффектное дополнение праздничной программы</li></ul><div class="section-bottom"><div class="price"><span>СТОИМОСТЬ</span><strong>от 150 000 ₸</strong></div></div></div>
+        <figure class="character-card service-photo"><img src="images/service-dance.jpg" alt="Танцевальный коллектив" loading="lazy"><figcaption class="card-label">DANCE PERFORMANCE</figcaption></figure><span class="section-number">03 / 04</span>
+      </div>
+    </section>
+
+    <section class="catalog-section extra-service theme-gold">
+      <div class="section-backdrop" style="background-image:url('images/background-light.jpg')" aria-hidden="true"></div><div class="section-content">
+        <div class="section-copy"><p class="eyebrow">LIGHT PERFORMANCE · 07</p><h2>Световое шоу</h2><p class="description">Завораживающее световое представление, которое наполнит пространство движением, цветом и праздничной атмосферой.</p><ul class="features"><li>Зрелищный визуальный эффект</li><li>Световые акценты и динамика</li><li>Яркий финал или отдельный номер программы</li></ul><div class="section-bottom"><div class="price"><span>СТОИМОСТЬ</span><strong>70 000 ₸</strong></div></div></div>
+        <figure class="character-card service-photo"><img src="images/service-light.jpg" alt="Световое шоу" loading="lazy"><figcaption class="card-label">LIGHT PERFORMANCE</figcaption></figure><span class="section-number">04 / 04</span>
+      </div>
+    </section>
+
+    <section class="booking-notes">
+      <div><span class="note-icon">✦</span><h2>Особые условия</h2></div>
+      <p><strong>31 декабря</strong> — двойной тариф на все услуги.</p>
+      <p class="fine-print">Скидка за раннее бронирование применяется к базовой стоимости. Уточняйте свободные даты и детали программы при заказе.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><a href="#top" class="footer-brand">МАРАМЕЛЬ</a><span>Создаём атмосферу праздника</span><a href="#catalog">Вернуться к каталогу ↑</a></footer>
+
+  <script>
+    // Показывает только те блоки каталога, у которых data-visible="true".
+    // Чтобы скрыть блок, поменяйте атрибут на data-visible="false" в его section.
+    document.querySelectorAll('.catalog-section[data-visible]').forEach(function (section) {
+      var setting = section.getAttribute('data-visible').trim().toLowerCase();
+      section.hidden = setting !== 'true';
+    });
+  </script>
+</body>
+</html>
